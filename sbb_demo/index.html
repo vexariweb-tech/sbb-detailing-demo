@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SBB Detailing — mobile detailing and valeting across Hertfordshire, Bedfordshire and Buckinghamshire." />
+  <title>SBB Detailing | Mobile Detailing & Valeting</title>
+  <style>
+    :root{
+      --bg:#081016;
+      --panel:#0d171e;
+      --panel2:#111e27;
+      --text:#f5f7f8;
+      --muted:#a8b6bf;
+      --line:rgba(255,255,255,.10);
+      --accent:#76f0c6;
+      --accent2:#68b8ff;
+      --shadow:0 28px 80px rgba(0,0,0,.38);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 80% 10%,rgba(118,240,198,.10),transparent 28%),radial-gradient(circle at 10% 15%,rgba(104,184,255,.10),transparent 25%),var(--bg);color:var(--text);line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1160px,92vw);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(8,16,22,.76);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;min-height:72px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em}
+    .mark{width:38px;height:38px;border-radius:12px;position:relative;background:linear-gradient(135deg,rgba(118,240,198,.95),rgba(104,184,255,.85));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 10px 28px rgba(104,184,255,.15)}
+    .mark:before,.mark:after{content:"";position:absolute;background:#081016;border-radius:999px}
+    .mark:before{width:21px;height:5px;left:9px;top:11px;transform:rotate(-34deg)}
+    .mark:after{width:18px;height:5px;left:11px;top:21px;transform:rotate(34deg)}
+    .navlinks{display:flex;gap:26px;color:#cbd5db;font-size:14px}
+    .navlinks a:hover{color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:12px;border:1px solid transparent;font-weight:800;font-size:14px;transition:.2s ease;cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#071015;box-shadow:0 16px 40px rgba(104,184,255,.18)}
+    .btn.secondary{border-color:var(--line);background:rgba(255,255,255,.03)}
+    .btn:hover{transform:translateY(-2px)}
+
+    .hero{padding:92px 0 60px;position:relative;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 10px;border:1px solid rgba(118,240,198,.22);border-radius:999px;background:rgba(118,240,198,.05);color:#c7ffe9;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1{font-size:clamp(44px,6.2vw,76px);line-height:.98;letter-spacing:-.055em;margin:22px 0 20px;max-width:760px}
+    .hero p{font-size:18px;color:var(--muted);max-width:690px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .pill{padding:8px 11px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.025);color:#d5dee3;font-size:13px}
+
+    .visual{position:relative;min-height:480px;border-radius:30px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));box-shadow:var(--shadow);overflow:hidden}
+    .visual:before{content:"";position:absolute;inset:-25% -20% auto auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(118,240,198,.23),transparent 62%);filter:blur(10px)}
+    .visual-card{position:absolute;inset:38px 34px 34px;display:flex;flex-direction:column;justify-content:space-between}
+    .tag{font-size:12px;color:#c4d5dc;letter-spacing:.08em;text-transform:uppercase}
+    .car-stage{position:relative;display:grid;place-items:center;min-height:300px}
+    .car{width:min(460px,88%);height:230px;position:relative}
+    .car .body{position:absolute;left:12%;right:8%;bottom:52px;height:82px;background:linear-gradient(180deg,#dce9ee,#6a818b);border-radius:58px 92px 26px 26px;box-shadow:inset 0 7px 16px rgba(255,255,255,.35),0 24px 60px rgba(0,0,0,.28)}
+    .car .roof{position:absolute;left:29%;width:45%;bottom:106px;height:70px;background:linear-gradient(145deg,#aab9bf,#42555d);clip-path:polygon(20% 100%,38% 5%,76% 0,100% 100%);border-radius:32px 32px 10px 10px}
+    .car .glass{position:absolute;left:36%;width:31%;bottom:122px;height:45px;background:linear-gradient(135deg,rgba(18,35,44,.95),rgba(74,126,148,.55));clip-path:polygon(10% 100%,25% 8%,83% 0,100% 100%);box-shadow:inset 0 0 20px rgba(118,240,198,.12)}
+    .wheel{position:absolute;bottom:24px;width:64px;height:64px;border-radius:50%;background:#091116;border:11px solid #2a363d;box-shadow:inset 0 0 0 6px #111a20}
+    .wheel:after{content:"";position:absolute;inset:12px;border-radius:50%;background:#8fa0a8}
+    .w1{left:22%}.w2{right:18%}
+    .shine{position:absolute;left:-10%;top:50px;width:26px;height:260px;transform:rotate(26deg);background:linear-gradient(180deg,transparent,rgba(255,255,255,.55),transparent);filter:blur(5px);animation:shine 4.5s ease-in-out infinite}
+    @keyframes shine{0%,30%{transform:translateX(0) rotate(26deg);opacity:0}45%{opacity:.8}70%,100%{transform:translateX(520px) rotate(26deg);opacity:0}}
+    .visual-bottom{display:flex;justify-content:space-between;gap:16px;align-items:end}
+    .visual-bottom strong{display:block;font-size:24px}.visual-bottom span{color:var(--muted);font-size:13px}
+
+    section{padding:88px 0}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:32px}
+    .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1;letter-spacing:-.045em;margin:0}.section-head p{max-width:540px;color:var(--muted);margin:0}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 18px 50px rgba(0,0,0,.14)}
+    .icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(118,240,198,.08);border:1px solid rgba(118,240,198,.16);color:var(--accent);font-weight:900;margin-bottom:18px}
+    .card h3{margin:0 0 8px;font-size:22px}.card p{margin:0;color:var(--muted)}
+
+    .story{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px}.story .big{padding:34px}
+    .quote{font-size:28px;line-height:1.2;letter-spacing:-.03em;margin:12px 0 24px}.meta{color:var(--muted);font-size:13px}
+    .checks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}.check{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
+    .check b{display:block;margin-bottom:4px}.check span{color:var(--muted);font-size:13px}
+
+    .coverage{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .region{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.region span{padding:10px 13px;border-radius:999px;background:rgba(104,184,255,.06);border:1px solid rgba(104,184,255,.15);color:#dbeeff}
+    .route{min-height:250px;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 30%,rgba(118,240,198,.12),transparent 22%),radial-gradient(circle at 78% 62%,rgba(104,184,255,.12),transparent 22%)}
+    .route svg{position:absolute;inset:0;width:100%;height:100%}
+
+    .gallery-note{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+    .gallery-card{min-height:210px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(140deg,rgba(118,240,198,.11),rgba(104,184,255,.04));padding:22px;display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden}
+    .gallery-card:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-50px;top:-60px;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%)}
+    .gallery-card strong{position:relative;font-size:20px}.gallery-card span{position:relative;color:var(--muted);font-size:13px;margin-top:5px}
+
+    .contact{display:grid;grid-template-columns:1fr .95fr;gap:18px}
+    .contact-panel{padding:34px}
+    .contact-list{display:grid;gap:10px;margin-top:22px}
+    .contact-link{display:flex;justify-content:space-between;gap:15px;padding:15px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+    .contact-link small{color:var(--muted)}
+    form{display:grid;gap:12px}
+    label{font-size:12px;color:#cbd6dc;font-weight:700}.input, textarea{width:100%;border:1px solid var(--line);background:#081218;color:#fff;border-radius:12px;padding:13px 14px;font:inherit;outline:none}.input:focus,textarea:focus{border-color:rgba(118,240,198,.46);box-shadow:0 0 0 4px rgba(118,240,198,.08)}textarea{min-height:120px;resize:vertical}
+
+    footer{border-top:1px solid var(--line);padding:24px 0 50px;color:var(--muted);font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:18px}
+    .concept{font-size:11px;color:#7f8c94;text-align:center;padding:14px 0 0}
+
+    @media(max-width:900px){.hero-grid,.story,.coverage,.contact{grid-template-columns:1fr}.grid3,.gallery-note{grid-template-columns:1fr 1fr}.navlinks{display:none}.visual{min-height:410px}}
+    @media(max-width:620px){.hero{padding-top:62px}.grid3,.gallery-note,.checks{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:12px}.footer-inner{display:block}.footer-inner > * + *{margin-top:10px}.visual{min-height:390px}.visual-card{inset:26px 20px 24px}h1{font-size:46px}.hero p{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shine{animation:none}.btn{transition:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap"><nav>
+      <a href="#top" class="brand" aria-label="SBB Detailing home"><span class="mark" aria-hidden="true"></span><span>SBB DETAILING</span></a>
+      <div class="navlinks">
+        <a href="#services">Services</a><a href="#about">About</a><a href="#coverage">Coverage</a><a href="#contact">Contact</a>
+      </div>
+      <a class="btn primary" href="#contact">Request a Quote</a>
+    </nav></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Mobile detailing & valeting · Hertfordshire</span>
+          <h1>Professional detailing. <span style="color:var(--accent)">We come to you.</span></h1>
+          <p>SBB Detailing is a fully mobile, self-sufficient detailing and valeting service, established in 2015 and covering most of Hertfordshire, Bedfordshire and Buckinghamshire.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact">Get a quote</a>
+            <a class="btn secondary" href="tel:07976408289">Call 07976 408289</a>
+          </div>
+          <div class="facts">
+            <span class="pill">Fully insured</span><span class="pill">On-board water & power</span><span class="pill">Established 2015</span>
+          </div>
+        </div>
+        <div class="visual" aria-label="Illustration of a freshly detailed car">
+          <div class="visual-card">
+            <div class="tag">MOBILE BY DESIGN</div>
+            <div class="car-stage">
+              <div class="car">
+                <div class="shine"></div><div class="roof"></div><div class="glass"></div><div class="body"></div><div class="wheel w1"></div><div class="wheel w2"></div>
+              </div>
+            </div>
+            <div class="visual-bottom"><div><strong>Clean finish.</strong><span>Safe methods. Quality products.</span></div><div class="tag">SBB</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head"><div><h2>Detailing that comes to you.</h2></div><p>SBB Detailing operates fully mobile and self-sufficient, with its own water and power so vehicle care can happen at your location.</p></div>
+        <div class="grid3">
+          <article class="card"><div class="icon">01</div><h3>Mobile detailing</h3><p>Professional vehicle detailing carried out at a location that works for you.</p></article>
+          <article class="card"><div class="icon">02</div><h3>Valeting</h3><p>Vehicle valeting delivered as part of SBB Detailing's mobile service.</p></article>
+          <article class="card"><div class="icon">03</div><h3>Safe methods</h3><p>The business focuses on using quality products and safe methods to achieve the best possible results.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap story">
+        <div class="card big">
+          <div class="eyebrow">About SBB Detailing</div>
+          <div class="quote">“Best possible results, competitive prices, and a service that comes to you.”</div>
+          <p class="meta">SBB Detailing was established in early 2015 and is run by a detailing and automotive enthusiast. The business is fully insured and operates as a self-sufficient mobile service.</p>
+        </div>
+        <div class="card big">
+          <h3>Built around convenience.</h3>
+          <p class="meta">SBB Detailing's public business information says the service is fully mobile, with on-board water and power, and can detail vehicles anywhere. The business is based in Hertfordshire and covers most of Herts, Beds and Bucks, with further travel possible by arrangement.</p>
+          <div class="checks">
+            <div class="check"><b>10+ years</b><span>Established in early 2015.</span></div>
+            <div class="check"><b>Fully insured</b><span>Publicly listed as fully insured.</span></div>
+            <div class="check"><b>Self-sufficient</b><span>On-board water and power.</span></div>
+            <div class="check"><b>Mobile coverage</b><span>Herts, Beds & Bucks.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="coverage">
+      <div class="wrap coverage">
+        <div class="card big">
+          <div class="eyebrow">Service area</div>
+          <h2 style="margin:18px 0 12px;font-size:42px;letter-spacing:-.05em">Herts · Beds · Bucks</h2>
+          <p style="color:var(--muted);margin:0">Based in Hertfordshire, SBB Detailing covers most of Hertfordshire, Bedfordshire and Buckinghamshire and can travel further when required.</p>
+          <div class="region"><span>Hertfordshire</span><span>Bedfordshire</span><span>Buckinghamshire</span><span>Further travel available</span></div>
+        </div>
+        <div class="card route" aria-hidden="true">
+          <svg viewBox="0 0 600 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs><filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <path d="M92 212 C155 148 170 255 246 186 S338 98 402 152 S478 128 523 90" stroke="url(#g)" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+            <defs><linearGradient id="g" x1="90" y1="200" x2="520" y2="90" gradientUnits="userSpaceOnUse"><stop stop-color="#76F0C6"/><stop offset="1" stop-color="#68B8FF"/></linearGradient></defs>
+            <circle cx="92" cy="212" r="9" fill="#76F0C6"/><circle cx="523" cy="90" r="9" fill="#68B8FF"/>
+            <text x="77" y="244" fill="#A8B6BF" font-size="15">Base</text><text x="486" y="67" fill="#A8B6BF" font-size="15">You</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head"><div><h2>Designed to showcase the work.</h2></div><p>No unverified vehicle photos are used here. Once SBB supplies its own approved before/after images, this section can become a real gallery without changing the layout.</p></div>
+        <div class="gallery-note">
+          <div class="gallery-card"><strong>Exterior care</strong><span>Reserved for SBB's own vehicle photography.</span></div>
+          <div class="gallery-card"><strong>Interior care</strong><span>Reserved for SBB's own vehicle photography.</span></div>
+          <div class="gallery-card"><strong>Before & after</strong><span>Reserved for verified SBB results.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact">
+        <div class="card contact-panel">
+          <div class="eyebrow">Get in touch</div>
+          <h2 style="font-size:46px;line-height:1.03;letter-spacing:-.05em;margin:18px 0 12px">Tell us about your vehicle.</h2>
+          <p style="color:var(--muted);margin:0">For a quote or availability, contact SBB Detailing directly. Include your vehicle, location and what you'd like done.</p>
+          <div class="contact-list">
+            <a class="contact-link" href="tel:07976408289"><span><b>07976 408289</b><small> Phone</small></span><span>↗</span></a>
+            <a class="contact-link" href="mailto:specialistdetailing@gmail.com"><span><b>specialistdetailing@gmail.com</b><small> Email</small></span><span>↗</span></a>
+            <a class="contact-link" href="https://www.facebook.com/1556206414643918/" target="_blank" rel="noopener"><span><b>Facebook</b><small> Public profile</small></span><span>↗</span></a>
+          </div>
+        </div>
+        <div class="card contact-panel">
+          <h3 style="font-size:26px;margin-top:0">Request a quote</h3>
+          <form onsubmit="sendQuote(event)">
+            <div><label for="name">Name</label><input class="input" id="name" required placeholder="Your name" /></div>
+            <div><label for="vehicle">Vehicle</label><input class="input" id="vehicle" required placeholder="e.g. BMW 3 Series" /></div>
+            <div><label for="location">Location</label><input class="input" id="location" required placeholder="Town / postcode" /></div>
+            <div><label for="message">What do you need?</label><textarea id="message" required placeholder="Tell SBB what you'd like done."></textarea></div>
+            <button class="btn primary" type="submit">Email SBB Detailing</button>
+          </form>
+        </div>
+      </div>
+      <div class="wrap concept">Website concept built by Vexari Web. Content is based only on publicly listed business information; pricing and gallery imagery are intentionally not invented.</div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><div><b style="color:#fff">SBB Detailing</b> · Mobile detailing & valeting</div><div>Hertfordshire · Bedfordshire · Buckinghamshire</div></div></footer>
+
+  <script>
+    function sendQuote(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const vehicle = document.getElementById('vehicle').value.trim();
+      const location = document.getElementById('location').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Quote request from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nVehicle: ' + vehicle + '\nLocation: ' + location + '\n\nWhat I need:\n' + message);
+      window.location.href = 'mailto:specialistdetailing@gmail.com?subject=' + subject + '&body=' + body;
+    }
+  </script>
+</body>
+</html>
